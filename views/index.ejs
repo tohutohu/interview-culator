@@ -10,7 +10,7 @@
     <ul class="feed-list">
       <% items.forEach(function(feed){ %>
         <li class="feed">
-          <a class="feed-title" href="<% feed.url %>"><% feed.title %></a>
+          <p class="feed-title"><% feed.title %></p>
           <p class="feed_date"><% feed.pubdate %></p>
         </li>
       <% }); %>

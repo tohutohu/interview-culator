@@ -11,7 +11,7 @@
       <% items.forEach(function(item){ %>
         <li class="feed-item">
            <div class ="feed">
-             <p class="feed-title"><%= item.title %>aaaa</p>
+             <a class="feed-title" href="<%= item.url %>"><%= item.title %>aaaa</p>
              <p class="feed_date"><%= item.pubdate %></p>
            </div>
         </li>

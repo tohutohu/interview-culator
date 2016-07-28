@@ -9,9 +9,11 @@
     <p>Welcome to <%= title %></p>
     <ul class="feed-list">
       <% items.forEach(function(item){ %>
-        <li class="feed">
-          <p class="feed-title"><% item.title %></p>
-          <p class="feed_date"><% item.pubdate %></p>
+        <li class="feed-item">
+           <div class ="feed">
+             <p class="feed-title"><% item.title %></p>
+             <p class="feed_date"><% item.pubdate %></p>
+           </div>
         </li>
       <% }); %>
     </ul>

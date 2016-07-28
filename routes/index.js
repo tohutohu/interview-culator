@@ -10,7 +10,11 @@ var connection = mysql.createConnection({
   });
 /* GET home page. */
 router.get('/', function(req, res, next) {
-  res.render('index', { title: 'Express' });
+  var query = 'SELECT * FROM feed';
+  connection.query(query,function(err,rows){
+    res.render('index', { title: 'Express',
+                          items: rows});
+  });
 });
 
 module.exports = router;

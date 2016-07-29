@@ -18,3 +18,7 @@ router.get('/', function(req, res, next) {
 });
 
 module.exports = router;
+
+process.on('exit',function(){
+  mysql.destroy();    
+});

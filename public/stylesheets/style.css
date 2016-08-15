@@ -1,16 +1,16 @@
 body {
   padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  font: 14px "メイリオ" "Lucida Grande", Helvetica, Arial, sans-serif;
 }
 
-a {
-  color: #00B7FF;
-}
 
 li{
-  background:#219837;
+  background:#999;
 }
 
+.feed-list{
+    list-style: none;
+}
 
 .feed-item{
   width:600px;

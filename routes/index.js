@@ -5,7 +5,7 @@ var connection = require("./myconnection");
 router.get('/', function(req, res, next) {
   var query = 'SELECT * ,DATE_FORMAT(pubdate, \'%Y年%m月%d日 %k時%i分\') AS pubdate FROM feed';
   connection.query(query,function(err,rows){
-    res.render('index', { title: 'Express',
+    res.render('index.html', { title: 'Express',
                           items: rows});
   });
 });

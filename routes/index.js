@@ -10,7 +10,7 @@ router.get('/', function(req, res, next) {
   }
   page = parseInt(page);
   console.log(page);
-  var query = 'SELECT * ,DATE_FORMAT(pubdate, \'%Y年%m月%d日 %k時%i分\') AS pubdate FROM feed LIMIT '+(page-1)*15 +', 15';
+  var query = 'SELECT * ,DATE_FORMAT(pubdate, \'%Y年%m月%d日 %k時%i分\') AS pubdate FROM feed ORDER BY pubdate DESC LIMIT '+(page-1)*15 +', 15';
   connection.query(query,function(err,rows){
     res.render('index.html', { title: 'Express',items: rows,page: page});
   });

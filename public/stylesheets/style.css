@@ -1,17 +1,50 @@
 body {
-  padding: 50px;
-  font: 14px "メイリオ" "Lucida Grande", Helvetica, Arial, sans-serif;
+    padding: 50px;
+    font: 14px "メイリオ" "Lucida Grande", Helvetica, Arial, sans-serif;
 }
 
+#body{
+    
+}
 
-li{
-  background:#999;
+#body-in{
+    width: 1070px;
+    margin: 0 auto;
+}
+
+#main{
+    float: left;
+    width: 750px;
+}
+
+#sidebar{
+    float: right;
+    width: 300px;
 }
 
 .feed-list{
     list-style: none;
+    width: auto;
 }
 
 .feed-item{
-  width:600px;
+    border: solid 3px #bbb;
+    padding: 5px;
+    padding-left: 12px;
+    margin-bottom: 10px;
+    border-radius: 6px
+}
+
+.feed-title{
+    font-size: 18px;
+}
+
+.feed-description{
+    margin-left: 30px;
+}
+
+.feed_date{
+    text-align: right;
+    color: darkgrey;
+    font-size: 12px;
 }

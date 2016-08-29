@@ -17,7 +17,8 @@
                 <% items.forEach(function(item){ %>
                     <li class="feed-item">
                        <div class ="feed">
-                         <a class="feed-title" href="<%= item.url %>" target="_blank"><%= item.title %></a>
+                         <a class="feed-title" href="/items/<%= item.id %>"><%= item.title %></a>
+                         <a href="http://b.hatena.ne.jp/entry/<%= item.url %>"><img src="http://b.hatena.ne.jp/entry/image/<%= item.url %>"></a>
                          <p class="feed-description"><%- item.sumally %></p>
                          <p class="feed_date"><%= item.pubdate %></p>
                        </div>
@@ -25,6 +26,7 @@
                   <% }); %>
             </ul>
             <a href=/?p=<%= page-1 %>>前のページ</a>
+            <div id="page-number">page<%= page %></div>
             <a href=/?p=<%= page+1 %>>次のページ</a>
     </div>
                 <div id="sidebar">

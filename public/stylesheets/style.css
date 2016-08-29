@@ -9,7 +9,7 @@ body {
 }
 
 #body-in{
-    width: 1070px;
+    width: 1090px;
     margin: 0 auto;
 }
 
@@ -20,7 +20,7 @@ body {
 
 #sidebar{
     float: right;
-    width: 300px;
+    width: 336px;
 }
 
 .feed-list{

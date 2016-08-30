@@ -10,6 +10,6 @@ var config={
   };
 var connection = mysql.createConnection(config);
 connection.on("error",function(err){
-      connection = mysql.createPool(config);
+      connection = mysql.createConnection(config);
     });
 module.exports = connection;

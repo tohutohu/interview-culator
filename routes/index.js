@@ -17,7 +17,6 @@ router.get('/', function(req, res, next) {
     console.log(rows);
     res.render('index.html', { title: 'Express',items: rows[1],page: page,rank:rows[0]});
   });
-  connection.end();
 });
 
 module.exports = router;

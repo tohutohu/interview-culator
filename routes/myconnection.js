@@ -1,5 +1,5 @@
 
-var mysql = require("mysql2");
+var mysql = require("mysql");
 var config={
     host : 'ja-cdbr-azure-west-a.cloudapp.net',
     user : 'b5df9e16ecc0d7',

@@ -50,3 +50,44 @@ body {
     color: darkgrey;
     font-size: 12px;
 }
+
+#item-box{
+    margin-top: 15px;
+    border: solid 2px;
+    padding: 15px
+}
+
+#item-title{
+    font-size: 23px;
+    color: black;
+    display: block;
+    text-decoration: none;
+    margin-bottom: 20px;
+    padding: 4px;
+    border: solid 3px;
+    border-bottom-color: darkgray;
+    border-radius: 5px;
+    
+}
+
+#item-description{
+    margin-top: 16px;
+}
+
+.sidebar-ranking{
+    margin-top: 15px;
+    padding: 7px;
+    border: solid 1px;
+    border-radius: 5px;
+}
+
+.ranking{
+    text-decoration: none;
+    list-style: none;
+}
+
+.rank-item{
+    margin-top: 10px;
+    border-bottom: solid 1px;
+    border-color: darkgray;
+}

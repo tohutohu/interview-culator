@@ -1,1 +1,13 @@
 <%- include("./adsense-bigrect.html") %>
+<div class="sidebar-ranking">
+  <p id="sidebar-ranking-title">人気記事ランキング</p>
+  <ul class="ranking">
+    <% rank.forEach(function(item){ %>
+      <li class="rank-item">
+        <div class="rank-feed">
+          <a class="rank-feed-title" href="/items/<%= item.id %>"><%= item.title %></a>
+          <a href="http://b.hatena.ne.jp/entry/<%= item.url %>"><img src="http://b.hatena.ne.jp/entry/image/<%= item.url %>"></a>
+          <p class="rank-feed-description"><%- item.sumally %></p>
+    <% }); %>
+  </ul>
+</div>

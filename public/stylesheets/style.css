@@ -1,12 +1,10 @@
 body {
-    padding: 50px;
-    font: 14px "メイリオ" "Lucida Grande", Helvetica, Arial, sans-serif;
+    padding: 0px;
+    margin: 0px;
+    font: 15px "メイリオ" "Lucida Grande", Helvetica, Arial, sans-serif;
     background-color: antiquewhite;
 }
 
-#body{
-    
-}
 
 #body-in{
     width: 1090px;
@@ -84,10 +82,50 @@ body {
 .ranking{
     text-decoration: none;
     list-style: none;
+    padding: 0px;
 }
 
 .rank-item{
     margin-top: 10px;
     border-bottom: solid 1px;
     border-color: darkgray;
+}
+
+@media screen and (max-width:1090px){
+    #body-in{
+        width:780px;
+        margin: 0 auto;
+    }
+    
+    #main{
+        float:none;
+    }
+    
+    #sidebar{
+        float: none;
+        width: auto;
+    }
+}
+
+@media screen and (max-width:767px){
+    body{
+        font-size: 13px;
+    }
+    
+    #body-in{
+        margin: 0;
+        width: auto;
+    }
+    
+    #main{
+        width: auto;
+        margin: 0;
+        float: none;
+    }
+    
+    #sidebar{
+        width: auto;
+        margin: 0;
+        float: none;
+    }
 }

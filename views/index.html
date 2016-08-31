@@ -7,32 +7,42 @@
     <%- include("./head.html") %>
   </head>
   <body>
-        <%- include("./header.html") %>
-            <hr>
-            <div id="body">
-                <div id="body-in">
-            
-                <div id="main">
-            <ul class="feed-list">
-                <% items.forEach(function(item){ %>
-                    <li class="feed-item">
-                       <div class ="feed">
-                         <a class="feed-title" href="/items/<%= item.id %>"><%= item.title %></a>
-                         <a href="http://b.hatena.ne.jp/entry/<%= item.url %>"><img src="http://b.hatena.ne.jp/entry/image/<%= item.url %>"></a>
-                         <p class="feed-description"><%- item.sumally %></p>
-                         <p class="feed_date"><%= item.pubdate %></p>
-                       </div>
-                    </li>
-                  <% }); %>
-            </ul>
-            <a href=/?p=<%= page-1 %>>前のページ</a>
-            <div id="page-number">page<%= page %></div>
-            <a href=/?p=<%= page+1 %>>次のページ</a>
+    <%- include("./header.html") %>
+    <hr>
+    <div id="body">
+      <div id="body-in">
+        <div id="main">
+          <ul class="feed-list">
+            <% var feed_count = 0; %>
+            <% items.forEach(function(item){ %>
+              <% feed_count++; %>
+              <li class="feed-item">
+                <div class ="feed">
+                  <a class="feed-title" href="/items/<%= item.id %>"><%= item.title %></a>
+                  <a href="http://b.hatena.ne.jp/entry/<%= item.url %>"><img src="http://b.hatena.ne.jp/entry/image/<%= item.url %>"></a>
+                  <p class="feed-description"><%- item.sumally %></p>
+                  <p class="feed_date"><%= item.pubdate %></p>
+                </div>
+              </li>
+              <% if(feed_count == 7 || feed_count == 15){ %>
+                <li class="adsense-in-list">
+                  <%- include("./adsense-responsive.html") %>
+                </li>
+              <% } %>
+            <% }); %>
+          </ul>
+          <div id="page-move">
+            <% if(page-1 != 0){ %>
+              <a class="page-move-item" id="back" href=/?p=<%= page-1 %>>前のページ</a>
+            <% } %>
+            <div class="page-move-item" id="number">page<%= page %></div>
+            <a class="page-move-item" id="forward" href=/?p=<%= page+1 %>>次のページ</a>
+          </div>
+        </div>
+        <div id="sidebar">
+          <%- include("./sidebar.html",rank) %>
+        </div>
+      </div>
     </div>
-                <div id="sidebar">
-                    <%- include("./sidebar.html",rank) %>
-                </div>
-                </div>
-                </div>
   </body>
 </html>

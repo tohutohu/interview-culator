@@ -49,6 +49,23 @@ body {
     font-size: 12px;
 }
 
+.adsense-in-list{
+    padding: 5px;
+    padding-left: 12px;
+    margin-bottom: 10px;
+    height: 100px;
+}
+
+#page-move{
+    display: table;
+    margin: 0 auto;
+}
+
+.page-move-item{
+    display:table-cell;
+    padding: 0px 10px;
+}
+
 #item-box{
     margin-top: 15px;
     border: solid 2px;
@@ -77,6 +94,7 @@ body {
     padding: 7px;
     border: solid 1px;
     border-radius: 5px;
+    background-color: whitesmoke;
 }
 
 .ranking{
@@ -123,9 +141,19 @@ body {
         float: none;
     }
     
+    .feed-list{
+        padding: 3px;   
+    }
+    
+    .adsense-in-list{
+        width: 350px;
+        height: 130px;
+    }
+    
     #sidebar{
         width: auto;
         margin: 0;
+        padding: 3px;
         float: none;
     }
 }

@@ -6,13 +6,15 @@ var connection=require('./myconnection');
 router.get('/:id', function(req, res, next) {
   var rank_query = 'SELECT * FROM feed ORDER BY pv DESC LIMIT 5; ';
   var query = rank_query + 'SELECT * FROM feed WHERE id = ' + req.params.id + ';';
-  connection.connect();
-  connection.query(query,function(err,itemdetail){
-    if(err) console.log(err);
-    console.log(itemdetail[1].pv);
-    res.render('item.html',{title:'インタビューキュレーター',item:itemdetail[1],rank:itemdetail[0]});
+  connection.getConnection(function(er,con){
+    con.query(query,function(err,itemdetail){
+      if(err) console.log(err);
+      console.log(itemdetail[1].pv);
+      res.render('item.html',{title:'インタビューキュレーター',item:itemdetail[1],rank:itemdetail[0]});
+    });
+    con.query('UPDATE feed SET pv = pv + 1 WHERE id = '+req.params.id+";");
+    con.release();
   });
-  connection.query('UPDATE feed SET pv = pv + 1 WHERE id = '+req.params.id+";");
 });
 
 module.exports = router;

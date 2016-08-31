@@ -8,8 +8,8 @@ var config={
     database : 'feedtank',
     multipleStatements: true
   };
-var connection = mysql.createConnection(config);
+var connection = mysql.createPool(config);
 connection.on("error",function(err){
-      connection = mysql.createConnection(config);
+      connection = mysql.createPool(config);
     });
 module.exports = connection;

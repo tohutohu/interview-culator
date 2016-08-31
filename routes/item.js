@@ -10,7 +10,7 @@ router.get('/:id', function(req, res, next) {
     con.query(query,function(err,itemdetail){
       if(err) console.log(err);
       console.log(itemdetail[1].pv);
-      res.render('item.html',{title:'インタビューキュレーター',item:itemdetail[1],rank:itemdetail[0]});
+      res.render('item.html',{title:'インタビューキュレーター|'+itemdetail[1].title,item:itemdetail[1],rank:itemdetail[0]});
     });
     con.query('UPDATE feed SET pv = pv + 1 WHERE id = '+req.params.id+";");
     con.release();

@@ -15,7 +15,7 @@ router.get('/', function(req, res, next) {
   connection.getConnection(function(err,con){
     con.query(query,function(err,rows){
       console.log(rows);
-      res.render('index.html', { title: 'Express',items: rows[1],page: page,rank:rows[0]});
+      res.render('index.html', { title: 'インタビューキュレーター',items: rows[1],page: page,rank:rows[0]});
     });
     con.release();
   });

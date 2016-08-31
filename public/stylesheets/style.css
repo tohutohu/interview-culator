@@ -50,10 +50,8 @@ body {
 }
 
 .adsense-in-list{
-    padding: 5px;
-    padding-left: 12px;
     margin-bottom: 10px;
-    height: 100px;
+    width: 100%;
 }
 
 #page-move{
@@ -146,8 +144,7 @@ body {
     }
     
     .adsense-in-list{
-        width: 350px;
-        height: 130px;
+        width: 100%;
     }
     
     #sidebar{

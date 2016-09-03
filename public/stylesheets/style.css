@@ -3,8 +3,14 @@ body {
     margin: 0px;
     font: 15px "メイリオ" "Lucida Grande", Helvetica, Arial, sans-serif;
     background-color: antiquewhite;
+    line-height: 21px;
 }
 
+.clearfix:after{
+	content: "";
+	clear: both;
+	display: block;
+}
 
 #body-in{
     width: 1090px;
@@ -76,6 +82,7 @@ body {
     display: block;
     text-decoration: none;
     margin-bottom: 20px;
+    margin-top: 0;
     padding: 4px;
     border: solid 3px;
     border-bottom-color: darkgray;
@@ -83,8 +90,35 @@ body {
     
 }
 
+#item-detail{
+    display:block;
+    height: auto;
+}
+
 #item-description{
     margin-top: 16px;
+    display:block;
+}
+
+.site-screenshot{
+    float: left;
+    margin-right: 15px;
+    margin-bottom: 20px;
+}
+
+#hateb-comment{
+    padding: 0 15px;
+}
+
+.comment-box{
+    padding: 3px 8px;
+    border-style:groove;
+}
+
+.comment-icon{
+    width: 50px;
+    margin-right: 12px;
+    float: left;
 }
 
 .sidebar-ranking{
@@ -126,6 +160,7 @@ body {
 @media screen and (max-width:767px){
     body{
         font-size: 13px;
+        line-height: 19px;
     }
     
     #body-in{

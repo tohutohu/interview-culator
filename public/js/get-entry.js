@@ -13,7 +13,7 @@ $.ajax({
     var page = obj.entry_url ;// はてブコメント欄のURL
      
     // [id=result]の要素内に出力
-    $( '#item-detail' ).prepend( '<img class="site-screenshot" src="' + img + '">' ) ;
+    //$( '#item-detail' ).prepend( '<img class="site-screenshot" src="' + img + '">' ) ;
      
     //個々のブクマ(コメント)を取得していく
     for( var i=0 , l=obj.bookmarks.length ; l > i ; i++ )

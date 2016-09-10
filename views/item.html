@@ -7,6 +7,12 @@
 
     <!-- JavaScriptの読み込み -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+    <script type="text/javascript">
+      var entry = '' + '<%= i.url %>';
+      var id = <%= i.id %>;
+    </script>
+    <script src="/js/get-entry.js"></script>
+    <script src="/js/get-relate-article.js"></script>
     <%- include("./head.html") %>
   </head>
   <body> 
@@ -15,13 +21,8 @@
     <div id="body">
       <div id="body-in">
         <div id="main">
-            <script type="text/javascript">
-              var entry = '' + '<%= i.url %>';
-              console.log('aaa'+entry);
-            </script>
-            <script src="/js/get-entry.js"></script>
             <div id="item-box">
-              <h2 id="item-title"><a href="<%= i.url %>"><%= i.title %></a></h2>
+              <h2 id="item-title"><a target="_blank" href="<%= i.url %>"><%= i.title %></a></h2>
               <div id="item-detail" class="clearfix">
                 <img class="site-screenshot" src="http://capture.heartrails.com/midium?<%= i.url %>">
                 <div id="item-description"><%- i.sumally %></div>
@@ -47,6 +48,7 @@
             <h3>はてブのコメント</h3>
             <mark id="result"></mark>
           </div>
+          <div id="relate-article"></div>
         </div>
         <div id="sidebar">
           <%- include("./sidebar.html",rank) %>

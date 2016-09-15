@@ -9,6 +9,10 @@ router.get('/:id', function(req, res, next) {
   connection.getConnection(function(er,con){
     con.query(query,function(err,itemdetail){
       if(err) console.log(err);
+      if(!itemdetail[1][0]){
+        res.status(404).send("そのページは存在しません");
+        return;
+      }
       if(itemdetail[2][0])
         res.render('item.html',{title:itemdetail[1][0].title+'｜インタビューキュレーター',i:itemdetail[1][0],rank:itemdetail[0],tags:itemdetail[2][0].tags.split(/\n/)});
       else

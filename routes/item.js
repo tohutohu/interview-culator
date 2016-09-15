@@ -9,8 +9,10 @@ router.get('/:id', function(req, res, next) {
   connection.getConnection(function(er,con){
     con.query(query,function(err,itemdetail){
       if(err) console.log(err);
-      console.log(itemdetail[2][0].tags.split(/\n/));
-      res.render('item.html',{title:itemdetail[1][0].title+'｜インタビューキュレーター',i:itemdetail[1][0],rank:itemdetail[0],tags:itemdetail[2][0].tags.split(/\n/)});
+      if(itemdetail[2][0])
+        res.render('item.html',{title:itemdetail[1][0].title+'｜インタビューキュレーター',i:itemdetail[1][0],rank:itemdetail[0],tags:itemdetail[2][0].tags.split(/\n/)});
+      else
+        res.render('item.html',{title:itemdetail[1][0].title+'｜インタビューキュレーター',i:itemdetail[1][0],rank:itemdetail[0],tags:[""]});
     });
     con.query('UPDATE feed SET pv = pv + 1 WHERE id = '+req.params.id+";");
     con.release();

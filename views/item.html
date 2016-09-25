@@ -5,14 +5,7 @@
     <title><%= title %></title>
     <link rel='stylesheet' href='/stylesheets/style.css' />
 
-    <!-- JavaScriptの読み込み -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
-    <script type="text/javascript">
-      var entry = '' + '<%= i.url %>';
-      var id = <%= i.id %>;
-    </script>
-    <script src="/js/get-entry.js"></script>
-    <script src="/js/get-relate-article.js"></script>
+    <meta name="Description" content="<%= i.sumally %>" />
     <%- include("./head.html") %>
   </head>
   <body> 
@@ -55,5 +48,14 @@
         </div>
       </div>
     </div>
+
+    <!-- JavaScriptの読み込み -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+    <script type="text/javascript">
+      var entry = '' + '<%= i.url %>';
+      var id = <%= i.id %>;
+    </script>
+    <script src="/js/get-entry.js"></script>
+    <script src="/js/get-relate-article.js"></script>
   </body>
 </html>
